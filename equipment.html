@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="What coffee gear is worth buying first, plus an interactive brew-ratio calculator.">
+  <title>Equipment — Brew Basics</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- ===== SAMPLE / PLACEHOLDER CONTENT — replace with your own topic ===== -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 9h11v6a5 5 0 0 1-5 5 5 5 0 0 1-5-5V9z"/>
+          <path d="M15 10h2.5a3 3 0 0 1 0 6H15"/>
+          <path d="M7 6.5C7 5 8.5 5 8.5 3.5"/>
+          <path d="M11 6.5C11 5 12.5 5 12.5 3.5"/>
+        </svg>
+        <span>Brew Basics</span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Open menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="methods.html">Methods</a></li>
+          <li><a href="equipment.html" aria-current="page">Equipment</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-labelledby="page-title">
+      <div class="container guide-layout">
+        <nav class="toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#essentials">Essentials</a></li>
+            <li><a href="#budget">Budget guide</a></li>
+            <li><a href="#calculator">Ratio calculator</a></li>
+          </ol>
+        </nav>
+
+        <article class="prose">
+          <p class="eyebrow">Part 3 of 4</p>
+          <h1 id="page-title">Choosing equipment</h1>
+          <p class="lead">You don't need much to brew well. A scale and a grinder matter more than an expensive machine.</p>
+
+          <section id="essentials">
+            <h2>The essentials</h2>
+            <p>Buy these in roughly this order. Everything else is optional.</p>
+            <ol class="steps">
+              <li><strong>A scale</strong> (0.1&nbsp;g precision) — repeatability is the fastest way to improve.</li>
+              <li><strong>A grinder</strong> — a burr grinder (hand or electric) beats blade grinders and pre-ground coffee.</li>
+              <li><strong>A brewer</strong> — a French press or dripper is a cheap, capable place to start.</li>
+              <li><strong>A kettle</strong> — any kettle works; a gooseneck spout makes pour over easier.</li>
+            </ol>
+            <div class="callout">
+              <span class="callout-title">Spend on the grinder first</span>
+              The single biggest upgrade for most people is freshly ground coffee from a decent burr grinder — not a fancier machine.
+            </div>
+          </section>
+
+          <section id="budget">
+            <h2>What each method needs</h2>
+            <div class="table-wrap">
+              <table>
+                <caption>Equipment needed by brewing method</caption>
+                <thead>
+                  <tr><th scope="col">Method</th><th scope="col">Required</th><th scope="col">Nice to have</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">French press</th><td>French press</td><td>Scale, timer</td></tr>
+                  <tr><th scope="row">Pour over</th><td>Dripper, paper filters</td><td>Gooseneck kettle</td></tr>
+                  <tr><th scope="row">AeroPress</th><td>AeroPress, paper filters</td><td>Scale</td></tr>
+                  <tr><th scope="row">Moka pot</th><td>Moka pot, stove</td><td>Scale</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="calculator">
+            <h2>Brew ratio calculator</h2>
+            <p>Work out how much water you need for a given dose of coffee, or how much coffee to grind for a number of cups.</p>
+
+            <form class="calculator mode-coffee" id="brew-calculator" onsubmit="return false">
+              <fieldset>
+                <legend>What do you want to calculate?</legend>
+                <div class="radio-group">
+                  <label><input type="radio" name="calc-mode" value="coffee-to-water" checked> Coffee → water</label>
+                  <label><input type="radio" name="calc-mode" value="cups-to-coffee"> Cups → coffee</label>
+                </div>
+              </fieldset>
+
+              <div class="field-group coffee-field">
+                <div class="form-row">
+                  <label for="coffee">Coffee dose (grams)</label>
+                  <input type="number" id="coffee" name="coffee" inputmode="decimal" min="1" step="0.5" value="15">
+                </div>
+              </div>
+
+              <div class="field-group cups-field">
+                <div class="form-row">
+                  <label for="cups">Number of cups</label>
+                  <input type="number" id="cups" name="cups" inputmode="numeric" min="1" step="1" value="2">
+                </div>
+                <div class="form-row">
+                  <label for="cup-size">Cup size (ml)</label>
+                  <input type="number" id="cup-size" name="cup-size" inputmode="numeric" min="30" step="10" value="250">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="ratio">Ratio (water : coffee)</label>
+                <input type="number" id="ratio" name="ratio" inputmode="decimal" min="5" max="25" step="0.5" value="16">
+              </div>
+
+              <div class="calc-output" id="calc-output" aria-live="polite">
+                <p><span id="calc-result-label">Water needed:</span></p>
+                <p><span class="result" id="calc-result">240</span> <span class="unit" id="calc-result-unit">ml</span></p>
+              </div>
+            </form>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Brew Basics</h2>
+          <p>A beginner-friendly guide to brewing better coffee at home. Sample content — replace with your own.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="getting-started.html">Getting Started</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Colophon</h2>
+          <ul>
+            <li><a href="about.html">About the author</a></li>
+            <li><a href="resources.html">Glossary &amp; FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Brew Basics.</p>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</body>
+</html>
