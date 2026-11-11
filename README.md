@@ -33,6 +33,8 @@ guide-site/
 
 Six pages, all linked through a shared header navigation and a footer nav.
 
+**Live site:** https://swdlawa.github.io/brew-basics/
+
 ---
 
 ## 2. How each requirement is met
@@ -44,7 +46,7 @@ Six pages, all linked through a shared header navigation and a footer nav.
 | **Structure** — semantic HTML | `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`, `<figure>`/`<figcaption>`, `<table>` with `<caption>`/`<th scope>`, `<dl>` glossary |
 | **Layout** — responsive on a phone | Fluid `clamp()` typography, CSS Grid/Flexbox, collapsible mobile nav, horizontal-scroll tables |
 | **Behaviour** — responds to the user | Dark-mode toggle, mobile nav, brew-ratio calculator, copy-to-clipboard buttons, scroll-spy table of contents, glossary filter, FAQ accordion, back-to-top |
-| **Live** — reachable at a real address | Deploy to GitHub Pages / Netlify / Vercel (see §7) |
+| **Live** — reachable at a real address | **Live at https://swdlawa.github.io/brew-basics/** on GitHub Pages (see §7) |
 | **History** — grows week by week | Git repo initialised; commit small steps each week so `git log` tells the story (see §8) |
 | **Identity** — Open Graph image, favicon, app icon | `og-image.png` (1200×630), `favicon.svg` + `favicon.png`, `apple-touch-icon.png` + manifest icons, plus full OG/Twitter `<meta>` tags and `manifest.webmanifest` on every page |
 
@@ -82,9 +84,9 @@ Search the project for these and replace them:
 - **Topic copy** — all headings, paragraphs, tables, recipes, and glossary terms are coffee examples. Replace them with *your* topic.
 - **About page** — `[Your name here]`, `you@example.com`, and the placeholder bio.
 - **`<meta name="description">`** on each page.
-- **`https://YOUR-DOMAIN/`** — appears in the `og:url` and `og:image` tags of every page. Replace with your real domain after you deploy (see §7).
+- **Canonical / Open Graph URLs** — already point at the live site, **https://swdlawa.github.io/brew-basics/**. If you rename the repo or add a custom domain, update the `og:url` / `og:image` tags in every `<head>` (see §7).
 
-Quick searches: `SAMPLE`, `[Your name here]`, `you@example.com`, `Brew Basics`, `YOUR-DOMAIN`.
+Quick searches: `SAMPLE`, `[Your name here]`, `you@example.com`, `Brew Basics`.
 
 **IMPORTANT — the content must be yours.** The rubric says your words and images must be your own or properly sourced, and any AI text must be edited until you own it. Rewrite the sample text in your own voice; don't submit it as-is.
 
@@ -141,7 +143,17 @@ It outputs:
 
 ## 7. Deploy to a real URL
 
-**GitHub Pages (free, easiest if you already use GitHub):**
+**This project is already live on GitHub Pages:**
+
+- **Site:** https://swdlawa.github.io/brew-basics/
+- **Repository:** https://github.com/swdlawa/brew-basics
+- **Hosting setting:** Settings → Pages → Deploy from a branch → `main` / root (already configured)
+
+The canonical/Open Graph URLs in every page's `<head>` already point at this address.
+
+**If you fork or rename the repo:** replace `https://swdlawa.github.io/brew-basics` in the `og:url` / `og:image` tags of every page's `<head>`, then commit and push.
+
+**First-time setup (if starting fresh elsewhere):**
 
 1. Create a new repository and push this folder:
    ```bash
@@ -154,8 +166,7 @@ It outputs:
    git push -u origin main
    ```
 2. In the repo on GitHub: **Settings → Pages → Source → Deploy from a branch → `main` / root → Save**.
-3. Your site is live at `https://YOUR_USERNAME.github.io/YOUR_REPO/`.
-4. Now go back and replace every `https://YOUR-DOMAIN/` in the `<head>` tags with that real URL, then commit and push again.
+3. Your site will be live at `https://YOUR_USERNAME.github.io/YOUR_REPO/`.
 
 **Netlify or Vercel (drag-and-drop):**
 
